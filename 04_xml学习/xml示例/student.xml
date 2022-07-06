@@ -1,0 +1,12 @@
+<!--student[id=001,name="Rrincil"]-->
+<!--student[id=002,name="Rrincil2"]-->
+<students>
+    <student>
+        <id>001</id>
+        <name>Rrincil</name>
+    </student>
+    <student>
+        <id>002</id>
+        <name>Rrincil2</name>
+    </student>
+</students>
