@@ -6,6 +6,8 @@
   2. Java EE(Java Enterprise Edition)企业版,主要针对web应用程序开发，包含Servlet,Jsp等
   3. Java ME(Java Micro Edition)小型版,支持Java程序运行在移动终端（手机，PAD）平台，对Java API 有所精简，并加入了针对移动端的支持
 * Java API文档 https://matools.com 
+* Java类组织形式![](./img/zhuzhixingshi.png)
+* unicode码 (https://tool.chinaz.com/Tools/Unicode.aspx)
 # 二、Java特性
 * Java语言是面向对象的（oop）
 * Java语言是健壮的。强类型机制，异常处理，垃圾自动收集的等是Java健壮性的保证
@@ -55,8 +57,15 @@
 13. 退出命令提示符（CMD）：exit
 14. 查看目录树 ： 当前目录 tree；或者tree 想查看的目录
 15. 清屏：cls
-# 五、变量
-## 5.1、基本数据类型
+# 五、字符编码
+1. ASCII：ASCII编码表，一个字节表示，一个128字符
+2. Unicode：Unicode编码表，固定大小的编码，使用2个字节来表示字符，字母和汉字都占用2个字节（浪费空间）
+3. UTF-8：大小可变的编码，字母使用1个字节，汉字使用3个字节
+4. gbk：可以表示汉字，而且范围广，字母1个字节，汉字2个字节
+5. gb2312：可以表示汉字，gb2312<gbk
+6. big5码：繁体中文，台湾，香港
+# 六、变量
+## 6.1、基本数据类型
 * <span style="color:purple;font-weight:800;">一个字节byte = 8位bit</span>
 1. 数值型
    1. 整数：byte[1],short[2],int[4],long[8]（l/L）
@@ -68,7 +77,7 @@
         3. <span style="color:red;font-weight:800;">浮点型常量默认值为Double,声明float类型时，必须加f/F或者强制转换类型(float)1.2</span>
 2. 字符型
    1.char[2]存放单个字符
-   2.String 字符型
+   2.String Java API字符串
 3. 布尔型：Boolean[1],true,false
 >double a = 2.7;
 >double b = 8.1/3;//2.6999999999999997-------输出近似2.7的
@@ -85,30 +94,75 @@ public class jiben01_基本数据类型{
     long x3;
     int x4;
     //浮点型常量默认值为Double,声明float类型时，必须加f/F或者强制转换类型(float)1.2
-    float y1 = 1.2f;
-    double y2 = 1.22;
+    float y1 = (float) 1.1;
+    float y2 = 1.2f;
+
+    double y3 = .22;//o.22
+    double y4 = 5.12e2;//科学计数法：5.12*10^2
+    double y5 = 5.12e-2;//科学计数法：5.12除于10^2
+
     char z1 = 's';
     static String z2= "nihao";
     Array t[] = new Array[7];
 
-//    强制转换 Cast to类型
+    //    强制转换 Cast to类型
     static char z3 = (char) x;
 
     public static void main(String[] args) {
+        float x = 1.234567459f; //1.2345674-------保留7位数
+        float x2 = 1.234567465f;//1.2345675
+        double y = 1.234567890;//1.23456789
+        System.out.println(x);
+        System.out.println(x2);
+        System.out.println(y);
+        System.out.println("---------------------------------------");
+
+        double a = 2.7;
+        double b = 8.1/3;//2.6999999999999997-------输出近似2.7的
+        System.out.println(a);
+        System.out.println(b);
+        if(Math.abs(a-b)<0.0001) { //Java API====Math.abs() 判断绝对值
+            System.out.println("相等");
+        } else {
+            System.out.println("不相等");
+        }
+        System.out.println("--------对小数进行相等判断的时候要小心,应该以两个数值的差的绝对值在某个精度范围类来判断------------");
+
         System.out.println(z2+z3);
     }
 }
 
 ```
-## 5.2、引用数据类型
+### 5.12 字符的使用
+- char类型是可以进行运算的，相当于一个整数，因为它有对应的unicode码
+- <span style="color:red;font-weight:800;">字符型存储：找到对应的Unicode码==》二进制==》存储</span>
+- <span style="color:red;font-weight:800;">字符型读取：二进制==》unicode码===》字符</span>
+```java
+package src;
+
+public class 字符的使用 {
+    public static void main(String[] args) {
+        char c1 = 'a';
+        char c2 = '\n'; //直接转义输出即被换行
+        char c3 = '中';
+        char c4 = 97; //char可以直接存放一个数字----unicode码 (https://tool.chinaz.com/Tools/Unicode.aspx)输出 a
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c3);
+        System.out.println(c4);
+
+    }
+}
+```
+## 6.2、引用数据类型
 1. 类（class）
 2. 接口（interface）
 3. 数组（Array）
-## 5.3 强制转换
+## 6.3 强制转换
 * 强制类型转换：大转小会损失精度，小转大不会
-# 六、运算
-## 6.1 算数运算
-## 6.2 关系运算
-## 6.3 逻辑运算
-## 6.4 三元运算
-# 七、进制
+# 七、运算
+## 7.1 算数运算
+## 7.2 关系运算
+## 7.3 逻辑运算
+## 7.4 三元运算
+# 八、进制
