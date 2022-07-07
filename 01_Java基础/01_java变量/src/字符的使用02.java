@@ -1,6 +1,6 @@
 package src;
 
-public class 字符的使用 {
+public class 字符的使用02 {
     public static void main(String[] args) {
         char c1 = 'a';
         char c2 = '\n'; //直接转义输出即被换行

@@ -1,9 +1,8 @@
 package src;
 
 import java.lang.reflect.Array;
-import java.sql.SQLOutput;
 
-public class jiben01_基本数据类型{
+public class 基本数据类型01 {
     static byte x = 22 ;
     short x2 = (short) 20L;//l表示long型
     long x3;
