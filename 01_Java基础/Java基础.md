@@ -5,6 +5,7 @@
   1.  Java SE(Java standard Edition)Java标准版本,提供完整Java核心API，支持面向桌面级应用
   2. Java EE(Java Enterprise Edition)企业版,主要针对web应用程序开发，包含Servlet,Jsp等
   3. Java ME(Java Micro Edition)小型版,支持Java程序运行在移动终端（手机，PAD）平台，对Java API 有所精简，并加入了针对移动端的支持
+* Java API文档 https://matools.com 
 # 二、Java特性
 * Java语言是面向对象的（oop）
 * Java语言是健壮的。强类型机制，异常处理，垃圾自动收集的等是Java健壮性的保证
@@ -33,5 +34,81 @@
 * <span style="color:red;font-weight:800;">语句以;结尾</span>
 * <span style="color:red;font-weight:800;">一个源文件中最多有一个Public类，其他类不限，编译后每个类都对应一个.class文件</span>
 * <span style="color:red;font-weight:800;">如果一个文件包含一个Public类，则文件名为该类名</span>
+# 四、DOS命令
+## 4.1 原理
+* DOS(Disk Operating System)磁盘操作系统
+* 相对路径：从当前目录开始定位，形成的一个路径
+* 绝对路径：从顶级目录开始定位，形成的路径
+## 4.2常用DOS命令
+1. 删除目录：rd 文件夹名
+2. 创建目录：md 文件夹名 
+3. 拷贝文件：copy 文件夹名
+4. 删除文件：del 文件夹名
+5. 输入内容到文件：echo 内容>文件全称：echo 你好>hello.txt;(echo会覆盖内容)
+6. 创建空文件：type null>文件全称
+7. 剪切/移动：move 文件名
+8. 查看当前目录有什么：dir 文件名 ； dir d:\abc\test
+9. 切换到其他盘下：切换到D盘：D: 切换到C盘：C:
+10. 进入当前盘的其他目录：cd 相对路径或者绝对路径；cd ..\..\abc\test[相对路径];cd c:abc\test[绝对路径]
+11. 返回上一级： cd..
+12. 切换到根目录：cd \
+13. 退出命令提示符（CMD）：exit
+14. 查看目录树 ： 当前目录 tree；或者tree 想查看的目录
+15. 清屏：cls
+# 五、变量
+## 5.1、基本数据类型
+* <span style="color:purple;font-weight:800;">一个字节byte = 8位bit</span>
+1. 数值型
+   1. 整数：byte[1],short[2],int[4],long[8]（l/L）
+        1. byte x = 8;(一个字节8位) 00001000
+        2. <span style="color:red;font-weight:800;">long x2 = 16;(2个字节16位) 0000000000010000</span>
+   2. 浮点数：单精度float[4]（f/F）,双精度Double[8]（d/D）
+        1. 浮点数存放形式：符号位+指数位+尾数为
+        2. 尾数部分可能丢失造成精度损失（小数都是近似值）
+        3. <span style="color:red;font-weight:800;">浮点型常量默认值为Double,声明float类型时，必须加f/F或者强制转换类型(float)1.2</span>
+2. 字符型
+   1.char[2]存放单个字符
+   2.String 字符型
+3. 布尔型：Boolean[1],true,false
+>double a = 2.7;
+>double b = 8.1/3;//2.6999999999999997-------输出近似2.7的
+><span style="color:red;font-weight:800;">对小数进行相等判断的时候要小心，应该以两个数值的差的绝对值在某个精度范围类来判断Math.abs()</span>;
+```java
+package src;
 
-# 四、Java
+import java.lang.reflect.Array;
+import java.sql.SQLOutput;
+
+public class jiben01_基本数据类型{
+    static byte x = 22 ;
+    short x2 = (short) 20L;//l表示long型
+    long x3;
+    int x4;
+    //浮点型常量默认值为Double,声明float类型时，必须加f/F或者强制转换类型(float)1.2
+    float y1 = 1.2f;
+    double y2 = 1.22;
+    char z1 = 's';
+    static String z2= "nihao";
+    Array t[] = new Array[7];
+
+//    强制转换 Cast to类型
+    static char z3 = (char) x;
+
+    public static void main(String[] args) {
+        System.out.println(z2+z3);
+    }
+}
+
+```
+## 5.2、引用数据类型
+1. 类（class）
+2. 接口（interface）
+3. 数组（Array）
+## 5.3 强制转换
+* 强制类型转换：大转小会损失精度，小转大不会
+# 六、运算
+## 6.1 算数运算
+## 6.2 关系运算
+## 6.3 逻辑运算
+## 6.4 三元运算
+# 七、进制

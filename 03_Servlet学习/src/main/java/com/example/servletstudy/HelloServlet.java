@@ -1,4 +1,4 @@
-package com.example.servletstudy;
+package src.main.java.com.example.servletstudy;
 
 import java.io.*;
 import javax.servlet.http.*;
