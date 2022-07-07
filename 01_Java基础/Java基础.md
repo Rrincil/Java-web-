@@ -58,9 +58,9 @@
 14. 查看目录树 ： 当前目录 tree；或者tree 想查看的目录
 15. 清屏：cls
 # 五、字符编码
-1. ASCII：ASCII编码表，一个字节表示，一个128字符
-2. Unicode：Unicode编码表，固定大小的编码，使用2个字节来表示字符，字母和汉字都占用2个字节（浪费空间）
-3. UTF-8：大小可变的编码，字母使用1个字节，汉字使用3个字节
+1. ASCII：ASCII编码表，1个字节表示，1个字节8位256个字符，但是ASCII只用了128个字符
+2. Unicode：Unicode编码表，固定大小的编码，使用2个字节来表示字符，字母和汉字都占用2个字节（浪费空间），兼容ASCII码，不会乱码
+3. UTF-8：大小可变的编码，字母使用1个字节，汉字使用3个字节（对Unicode改进）
 4. gbk：可以表示汉字，而且范围广，字母1个字节，汉字2个字节
 5. gb2312：可以表示汉字，gb2312<gbk
 6. big5码：繁体中文，台湾，香港
@@ -79,6 +79,7 @@
    1.char[2]存放单个字符
    2.String Java API字符串
 3. 布尔型：Boolean[1],true,false
+### 6.1.1数值型的使用
 >double a = 2.7;
 >double b = 8.1/3;//2.6999999999999997-------输出近似2.7的
 ><span style="color:red;font-weight:800;">对小数进行相等判断的时候要小心，应该以两个数值的差的绝对值在某个精度范围类来判断Math.abs()</span>;
@@ -133,7 +134,7 @@ public class jiben01_基本数据类型{
 }
 
 ```
-### 5.12 字符的使用
+### 6.1.2 字符的使用
 - char类型是可以进行运算的，相当于一个整数，因为它有对应的unicode码
 - <span style="color:red;font-weight:800;">字符型存储：找到对应的Unicode码==》二进制==》存储</span>
 - <span style="color:red;font-weight:800;">字符型读取：二进制==》unicode码===》字符</span>
@@ -146,13 +147,22 @@ public class 字符的使用 {
         char c2 = '\n'; //直接转义输出即被换行
         char c3 = '中';
         char c4 = 97; //char可以直接存放一个数字----unicode码 (https://tool.chinaz.com/Tools/Unicode.aspx)输出 a
+        char c5 = '王';
+        int x = c5;
         System.out.println(c1);
         System.out.println(c2);
         System.out.println(c3);
         System.out.println(c4);
-
+        System.out.println(x); //输出‘王’对应的unicode码
     }
 }
+
+```
+### 6.1.3 布尔型的使用
+- boolean类型占用的空间是1个字节：true或者false
+- 用于逻辑运算和流程控制
+```java
+
 ```
 ## 6.2、引用数据类型
 1. 类（class）

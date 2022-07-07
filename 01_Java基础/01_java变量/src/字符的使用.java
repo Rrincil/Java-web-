@@ -12,7 +12,6 @@ public class 字符的使用 {
         System.out.println(c2);
         System.out.println(c3);
         System.out.println(c4);
-        System.out.println(x);
-
+        System.out.println(x); //输出‘王’对应的unicode码
     }
 }
