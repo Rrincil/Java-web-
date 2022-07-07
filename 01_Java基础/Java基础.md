@@ -162,6 +162,23 @@ public class 字符的使用 {
 - boolean类型占用的空间是1个字节：true或者false
 - 用于逻辑运算和流程控制
 ```java
+package src;
+
+public class 布尔类型03 {
+    static boolean y = false;
+    public static void main(String[] args) {
+        char x = 'R';
+        add();
+        if(y) {
+            System.out.println((int)x);
+        } else {
+            System.out.println("假的");
+        }
+    }
+    public static void add() {
+        y = true;
+    }
+}
 
 ```
 ## 6.2、引用数据类型
@@ -170,6 +187,8 @@ public class 字符的使用 {
 3. 数组（Array）
 ## 6.3 强制转换
 * 强制类型转换：大转小会损失精度，小转大不会
+## 6.4 自动类型转换
+
 # 七、运算
 ## 7.1 算数运算
 ## 7.2 关系运算
